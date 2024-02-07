@@ -2,10 +2,15 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 h1, p, span, h2{
-    font-family: Manrope, sans-serif;
+    font-family: Manrope, sans-serif; 
+    overflow-y: hidden;
+}
+h1, p, span, h2, img, a, div{
+    overflow-y: hidden;
 }
 
 body {
@@ -18,6 +23,7 @@ header {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    overflow-y: hidden;
 }
 
 nav {
@@ -233,6 +239,7 @@ nav {
 .brief-img {
     display: flex;
     gap: 20px;
+    margin-top: 4rem;
 }
 
 .img-hero .small-logo {
@@ -244,8 +251,8 @@ nav {
 }
 
 .brief-img img {
-    width: 250px;
-    height: 300px;
+    width: 200px;
+    height: 320px;
     flex-shrink: 0;
 }
 
@@ -302,7 +309,7 @@ nav {
 
 .proj-text {
     display: flex;
-    gap: 660px;
+    gap: 60px;
     align-items: center;
     margin-bottom: 20px;
 }
@@ -334,18 +341,25 @@ nav {
 
 .book-content {
     margin-left: 50px;
+    color: #fff;
+    line-height: 2rem;
 }
 
 .book-content h1 {
     font-size: 25px;
+
 
 }
 
 .book-content p {
     font-size: 15px;
 }
+.book-content button{
+
+}
 
 .bookings {
+    background-color: #13C4A1;
     background-image: url('../image/IVAV\ SOLUTIONS\ 4.png');
     background-size: cover;
     background-position: center;
@@ -473,8 +487,27 @@ hr {
     font-size: 15px;
 }
 
-@media  (width < 900px) {
+@media   (width < 900px) {
+    *{
+        overflow-x: hidden;
+    }
     .links a:not(.nav-links) {
+        display: none;
+    }
+
+    /* .nav-links {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -3;
+    } */
+
+    .header-logo {
         display: none;
     }
 
@@ -492,15 +525,19 @@ hr {
     .first-img {
        width: 400px;
        position: relative;
-       /* left: 50px; */
+       left: 14%;
        align-items: center;
+
     }
 
     .cards-container {
-        display: flex;
+        display: inline-flex;
         flex-direction: column;
         justify-content: center;
         gap: 10px;
+        margin-top: 15%;
+        width: 80vw;
+        text-align: left;
     }
 
     .img-hero {
@@ -512,6 +549,17 @@ hr {
         flex-direction: column;
         gap: 20px;
         justify-content: center;
+        padding: 0%;
+        margin-top: 2rem;
+
+    }
+    .reviews p{
+        padding: 2rem;
+    }
+    .reviews-content{
+        text-align: center;
+        width: 100%;
+
     }
 
     .pro-img {
@@ -521,16 +569,40 @@ hr {
     .proj-text {
         display: flex;
         flex-direction: column;
+        padding: 0%;
+        margin: 0%;
+        height: 0%;
+        gap: 5rem;
     }
-
+    .proj-text h1{
+        font-size: 2rem;
+        font-weight: 600;
+        
+    }
     .book-img {
         display: none;
     }
+
 
     .book-content {
         display: flex;
         flex-direction: column;
         gap: 10px;
+        text-align: center;
+    }
+    .book-content div{
+        width: 100%;
+    }
+    .book-content div button{
+        width: 30%;
+        padding: 1rem;
+        color: #13C4A1;
+        background-color: #fff;
+        border: #ffffff;
+        border-radius: .5rem;
+    }
+    .content-container{
+        text-align: center;
     }
 
     .footer-container {
@@ -543,15 +615,163 @@ hr {
         padding: none;
         margin: none;
     }
+    .btnd{
+        width: 80vw;
+    }
+    .btn {
+        margin: auto;
+    }
+    .cards{
+        width: 100%;
+        border-radius: 2rem;
+        height: fit-content;
+    }
+    .card{
+        height: fit-content;
+        width: 100%;
+        border-radius: 1rem;
+        margin-top: 2rem;
 
+    }
+    .arrow{
+        text-align: right;
+    }
+    .br-none{
+        display: none;
+    }
+    .card-text{
+        margin-top: 4rem;
+    }
+    .card-text p {
+        font-size: 1.2rem;
+        font-weight: 100;
+    }
+    .card-text i{
+        padding: 5%;
+        background-color: #ffffff;
+        color: #13C4A1;
+        border-radius: 50%;
+        margin-right: 1rem;
+        margin-top: 1rem;
+        box-shadow: 0px 0px 5px 10px rgba(51, 51, 51, 0.05);
+    }
+    .card-design{
+        width: 100%;
+    }
+    .card-design h1{
+        text-align: right;
+        width: 100%;
+        font-size: 6rem;
+        font-weight: 800;
+    }
+    .card-design img{
+        width: 10rem;
+    }
+    .rev-text{
+        text-align: center;
+    }
+    .reviews-container h1{
+        font-size: 2rem;
+
+    }
+    .project-img{
+        padding: 0px;
+        height: 20%;
+    }
+    .pro-img-1 {
+        width: fit-content;
+    }
+}
+@media only screen and (max-width: 500px){
+  .first-img  {
+    width: 390px;
+    left: 10px;
+  }
+  .content-container h1 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    line-height: 32.78px;
+  }
+  .content-container p {
+    font-size: 1rem;
+    line-height: 30px;
+    font-weight: 400;
+  }
+  .btn{
+    line-height: 21.86px;
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+  .details {
+    font-size: 2rem;
+  }
+.cards-details{
+    padding: 0;
+}    
+.cards-container{
+    width:400px ;
+    margin-left: 14px;
+}
+.card-text h1{
+    font-size: 2rem ;
+    font-weight: 700 ;
+}
+.card-text p{
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 26px;
+}
+.reviews p{
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: 26px;
+}
+.reviews-container{
+    padding: 0;
+}
+.project-container{
+    padding: 0;
+    margin-left: -10px;
     
 }
+.proj-text{
+    gap: 75px;
+}
+.proj-icon{
+    padding: 30px;
+}
 
+.proj-text h1 {
+    margin-top: 50px;
+}
+.book-container{
+    padding: 0;
+}
+.bookings{
+    margin-left: -14%;
+    padding-bottom: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 40px;
+ 
+}
+.bookings h1{
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+.bookings p{
+    font-size: 0.8rem;
+    line-height: 30px;
+    font-weight: 400;
+}
+.book-content-btn{
+    padding: 20px;
+}
+.footer{
+    padding: 0px;
+    padding-left: 10px;
+    padding-top: 20px;
 
+}
 
-
-
-
-
-
-
+}
